@@ -230,12 +230,18 @@ function loop(timestamp) {
     }
   }
 
+  if(isIntersection(limits[2], ball)){
+    alert('you lose')
+    document.location.reload();
+  }
+
   if (isIntersection(limits[0], ball) || isIntersection(limits[2], ball)) {
     ball.angle = Math.PI * 2 - ball.angle;
   }
   if (isIntersection(limits[1], ball) || isIntersection(limits[3], ball)) {
     ball.angle = Math.PI - ball.angle;
   }
+  
 
   if (isIntersection(platforma, ball)) {
     const x = ball.x + ball.width / 2;
